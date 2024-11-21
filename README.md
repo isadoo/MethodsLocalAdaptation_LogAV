@@ -1,6 +1,7 @@
 # Spatially Divergent Selection Methods
 
 This is a repository for the scripts and data related to the project **"A method for identifying spatially divergent selection considering structured populations."**
+This is a project in collaboration with Pierre de Villemereuil, Oscar Gaggiotti and Jerome Goudet.
 
 In this project, we tested three methods:
 1. **QstFst**: Based on Whitlock and Guillaume's 2009 approach ([DOI: 10.1534/genetics.108.099812](https://doi.org/10.1534/genetics.108.099812)).
