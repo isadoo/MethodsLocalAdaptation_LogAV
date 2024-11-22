@@ -1,4 +1,4 @@
-# Spatially Divergent Selection Methods
+# Testing methods for local adaptation
 
 This is a repository for the scripts and data related to the project **"A method for identifying spatially divergent selection considering structured populations."**
 This is a project in collaboration with Pierre de Villemereuil, Oscar Gaggiotti and Jerome Goudet.
