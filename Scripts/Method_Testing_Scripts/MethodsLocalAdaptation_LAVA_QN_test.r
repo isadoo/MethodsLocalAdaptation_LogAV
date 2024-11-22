@@ -179,18 +179,19 @@ make.traits<-function(bed=bed,n.causal=1000,h2=0.5,minp=0.01,sel=0.0,pop=NULL,po
 
 get_vars <- function(bed.F1_quanti, Theta.P, The.M, bed.F1_neutral, dos.F1_quanti) {
     total_f1<-length(bed.F1_neutral@ped$id[nf])
-    ####Dos sum 
-    #dosage_quanti <- dos.F1_quanti[1:total_f1,] 
-    #Y <- rowSums((dosage_quanti-1)*0.02)  #previously 0.6324
+   
     ####
     
-    h2 <- 1
+    #h2 <- 1
     #bed <- bed.F1_quanti[nf, ]
     #sampled_neutral <- sample(dim(bed.F1_neutral[nf,])[2],100)
     #bed_nm <- bed.F1_neutral[nf,sampled_neutral]
     #pheno <- make.traits(bed_nm, n.causal = 100, h2 = h2, minp = 0.001)
-    pheno <- make.traits(bed.F1_quanti[nf, ], n.causal = 100, h2 = h2, minp = 0.001)
-    Y <- pheno$trait$pheno
+    #pheno <- make.traits(bed.F1_quanti[nf, ], n.causal = 100, h2 = h2, minp = 0.001)
+    #Y <- pheno$trait$pheno
+    ####Dos sum 
+    dosage_quanti <- dos.F1_quanti[1:total_f1,] 
+    Y <- rowSums((dosage_quanti-1)*0.02)
     err <- rnorm(length(Y), mean = 0, sd = 1)
     Y <- Y + err
     mean_Y <- mean(Y)
