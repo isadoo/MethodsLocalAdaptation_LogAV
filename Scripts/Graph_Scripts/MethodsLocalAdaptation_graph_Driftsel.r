@@ -3,7 +3,7 @@ ds <- read.csv(csvname)
 pdf(pdfname)
 
 
-#Bins with size of alpha!
+#Bins with size of alpha
 bin_width <- 0.05
 breaks_seq <- seq(from = floor(min(ds$S_Value, na.rm = TRUE) / bin_width) * bin_width,
                   to = ceiling(max(ds$S_Value, na.rm = TRUE) / bin_width) * bin_width,
