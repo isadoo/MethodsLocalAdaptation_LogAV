@@ -17,7 +17,7 @@ args <- commandArgs(trailingOnly = TRUE)
 #Arguments to the respective variables
 replicate_number <- as.integer(args[1])
 optima_typeCheck <- args[2]
-if(optima_typeCheck == "Neutral"){optima_type = ""} else {optima_type = "Selection"}
+if(optima_typeCheck == "Neutral"){optima_type = ""} else {optima_type = args[2]}
 generations <- as.integer(args[3])
 Population_structure <- args[4]
 Selective_or_Neutral <- args[5]

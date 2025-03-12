@@ -15,7 +15,7 @@ args <- commandArgs(trailingOnly = TRUE)
 #Arguments to the respective variables
 replicate_number <- as.integer(args[1])
 optima_typeCheck <- args[2]
-if(optima_typeCheck == "Neutral"){optima_type = ""} else {optima_type = "Selection"}
+if(optima_typeCheck == "Neutral"){optima_type = ""} else {optima_type = paste0("_",args[2])}
 generations <- as.integer(args[3])
 Population_structure <- args[4]
 Selective_or_Neutral <- args[5]
@@ -26,7 +26,7 @@ Simulation_directory <- paste0("/work/FAC/FBM/DEE/jgoudet/pop_fst/isa/Chapter1/Q
                                 Population_structure, "_", Selective_or_Neutral, optima_type, "/")
 Neutral_file_name <- paste0("neutral_data_g", generations, "_r")
 Quanti_file_name <- paste0("quanti_trait_g", generations, "_r")
-file_csv_name <- paste0("MethodsLocalAdaptation_Lava_", Selective_or_Neutral, "_", Population_structure)
+file_csv_name <- paste0("MethodsLocalAdaptation_Lava_", Selective_or_Neutral, "_", optima_type, "_",Population_structure)
 
 #Default breeding parameters
 ns <- 5  # Number of sires
@@ -191,7 +191,7 @@ get_vars <- function(bed.F1_quanti, Theta.P, The.M, bed.F1_neutral, dos.F1_quant
     #Y <- pheno$trait$pheno
     ####Dos sum 
     dosage_quanti <- dos.F1_quanti[1:total_f1,] 
-    Y <- rowSums((dosage_quanti-1)*0.02)
+    Y <- rowSums((dosage_quanti-1)*0.2)
     err <- rnorm(length(Y), mean = 0, sd = 1)
     Y <- Y + err
     mean_Y <- mean(Y)
@@ -223,9 +223,9 @@ get_vars <- function(bed.F1_quanti, Theta.P, The.M, bed.F1_neutral, dos.F1_quant
     quant_log_ratio <- quantile(post_samples$log_ratio, probs = c(0.025, 0.975))
 
     
+    p_value <- 2 * sum(sign(post_samples$log_ratio) != sign(median(post_samples$log_ratio))) / length(post_samples$log_ratio)
     
-    frequency_opp <- 2 * sum(sign(post_samples$log_ratio) != sign(median(post_samples$log_ratio))) / length(post_samples$log_ratio)
-    p_value <- 2 * min(frequency_opp, 1 - frequency_opp)
+    #p_value <- 2 * min(frequency_opp, 1 - frequency_opp)
 
 
     results <- list(p_value = p_value,

@@ -13,7 +13,7 @@ args <- commandArgs(trailingOnly = TRUE)
 #Arguments to the respective variables
 replicate_number <- as.integer(args[1])
 optima_typeCheck <- args[2]
-if(optima_typeCheck == "Neutral"){optima_type = ""} else {optima_type = "Selection"}
+if(optima_typeCheck == "Neutral"){optima_type = ""} else {optima_type = args[2]}
 generations <- as.integer(args[3])
 Population_structure <- args[4]
 Selective_or_Neutral <- args[5]
@@ -24,7 +24,7 @@ Simulation_directory <- paste0("/work/FAC/FBM/DEE/jgoudet/pop_fst/isa/Chapter1/Q
                                 Population_structure, "_", Selective_or_Neutral, optima_type, "/")
 Neutral_file_name <- paste0("neutral_data_g", generations, "_r")
 Quanti_file_name <- paste0("quanti_trait_g", generations, "_r")
-file_csv_name <- paste0("MethodsLocalAdaptation_QSTFST_", Selective_or_Neutral, "_", Population_structure)
+file_csv_name <- paste0("MethodsLocalAdaptation_QSTFST_", Selective_or_Neutral, "_", Population_structure, ".csv")
 
 #Default breeding parameters
 ns <- 5  # Number of sires

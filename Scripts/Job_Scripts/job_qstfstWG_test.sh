@@ -15,4 +15,18 @@
 
 module load gcc/11.4.0
 module load r
-Rscript PLOSGEN_WG_QN_test.r $SLURM_ARRAY_TASK_ID
+
+#Example
+OPTIMA_TYPE="Neutral" 
+GENERATIONS=5000
+POPULATION_STRUCTURE="SS_20pop"
+SELECTIVE_OR_NEUTRAL="Neutral_5kGen"
+NP=20
+
+Rscript MethodsLocalAdaptation_LogAV/Scripts/Method_Testing_Scripts/MethodsLocalAdaptation_WG_QN_test.r \
+    $SLURM_ARRAY_TASK_ID \
+    $OPTIMA_TYPE \
+    $GENERATIONS \
+    $POPULATION_STRUCTURE \
+    $SELECTIVE_OR_NEUTRAL \
+    $NP
