@@ -1,2 +1,2 @@
 data from (doi: https://doi.org/10.1111/evo.12268) "BRINGING HABITAT INFORMATION INTO STATISTICAL TESTS OF LOCAL ADAPTATION IN QUANTITATIVE TRAITS: A CASE STUDY OF NINE-SPINED STICKLEBACKS."
-The data was reformatted fro applying it to lava
+The data was reformatted fro applying it to logAV
