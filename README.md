@@ -20,7 +20,7 @@ We also tested our method (LogAV) using populations under selection under two po
 ### `Scripts/`
 - **`Job_Scripts/`**: Contains job scripts used for running simulations and analyses.
 - **`Simulation_Scripts/`**: Contains simulation configuration files for quantiNemo.
-- **`Method_Testing_Scripts/`**: Contains R scripts for testing each method.
+- **`Method_Testing_Scripts/`**: Contains R scripts for testing each method, including the script we use to run logAV on stickleback data by Karhunen et al 2014. ([DOI: doi.org/10.1111/evo.12268]( https://doi.org/10.1111/evo.12268))
 - **`Graph_Scripts/`**: Contains R scripts for creating graphs from results.
 
 ### `Data/`
@@ -29,3 +29,4 @@ We also tested our method (LogAV) using populations under selection under two po
   - **`LAVA/`**: Processed results from the LogAV method.
   - **`Driftsel/`**: Processed results from DRIFTSEL.
   - **`QstFst/`**: Processed results from QstFst.
+  - **stickleback_karhunen2014/**: Standardized data from Karhunen et al 2014. ([DOI: doi.org/10.1111/evo.12268]( https://doi.org/10.1111/evo.12268))
